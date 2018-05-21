@@ -16,7 +16,7 @@
     "access",
     "directive"
   ],
-  "author": "Matthew Zo <mattzo@zoho.com> (http://mattzo.life)",
+  "author": "Matthew Zo <zoho10@outlook.com> (http://mattzo.life)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/zohoMatt/vue-access-control/issues"
@@ -26,7 +26,5 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4"
   },
-  "dependencies": {
-    "vue": "^2.5.16"
-  }
+  "dependencies": {}
 }
