@@ -1,0 +1,29 @@
+{
+  "name": "v-access-control",
+  "version": "0.2.0",
+  "description": "Use v-access, a custom directive, to implement front-end access control in Vue.js.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zohoMatt/vue-access-control.git"
+  },
+  "keywords": [
+    "vue",
+    "access",
+    "directive"
+  ],
+  "author": "Matthew Zo <mattzo@zoho.com> (http://mattzo.life)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zohoMatt/vue-access-control/issues"
+  },
+  "homepage": "https://github.com/zohoMatt/vue-access-control#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4"
+  }
+}
