@@ -9,7 +9,7 @@ VueAccess.install = function (Vue, options) {
      * @param anyRequired   {string[]}      User with any authority in this array would be considered as permitted.
      * @returns             {boolean}       Accessible or not.
      */
-    export const checkAccess = ({ achieved, required, anyRequired }) => {
+    const checkAccess = ({ achieved, required, anyRequired }) => {
         if (required && anyRequired && required.length > 0 &&
             anyRequired.length > 0) {
             // All >= 1 element
