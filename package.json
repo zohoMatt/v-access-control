@@ -1,9 +1,10 @@
 {
   "name": "v-access-control",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "description": "Use v-access, a custom directive, to implement front-end access control in Vue.js.",
   "main": "dist/index.js",
   "scripts": {
+    "topublish": "npm run build && npm publish",
     "build": "webpack .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,7 +25,8 @@
   "homepage": "https://github.com/zohoMatt/vue-access-control#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4"
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0"
   },
   "dependencies": {}
 }
