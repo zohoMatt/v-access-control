@@ -1,4 +1,9 @@
 export default {
+    /**
+     * @method install
+     * @param {*} Vue 
+     * @param {*} options  flow style: { userAuth: string[] }
+     */
     install(Vue, options) {
         /**
          * @function checkAccess
