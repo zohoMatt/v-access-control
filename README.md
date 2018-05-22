@@ -5,9 +5,9 @@
 > On developing: access control of route level
 
 ## Install
-`npm i vue-access-control`  
+`npm i v-access-control`  
 or   
-`yarn add vue-access-control`
+`yarn add v-access-control`
 
 ## Documentation
 ### Basic examples
@@ -56,13 +56,3 @@ Consequently, user who acquire AUTH1 and AUTH2 and **any one of** `AUTH3, AUTH4`
     userAuthFactory: void => string[]
 }
 ```
-
-### Q & A
-
-## Contribution
-### Build
-
-### Run tests
-
-### Project structure
-
