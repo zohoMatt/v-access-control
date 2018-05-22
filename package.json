@@ -1,6 +1,6 @@
 {
   "name": "v-access-control",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Use v-access, a custom directive, to implement front-end access control in Vue.js.",
   "main": "dist/index.bundle.js",
   "scripts": {
