@@ -2,7 +2,7 @@ export default {
     /**
      * @method install
      * @param {*} Vue 
-     * @param {*} options  flow style: { userAuth: string[] }
+     * @param {*} options  flow style: { userAuthFactory: void => string[] }
      */
     install(Vue, options) {
         /**
@@ -31,7 +31,7 @@ export default {
         };
 
         const updateElement = (el, binding) => {
-            let userAuth = options.userAuth;
+            let userAuth = options.userAuthFactory() || [];
             let requiredAuth = Object.keys(binding.modifiers);
             let anyRequiredAuth = binding.arg ? binding.arg.split('|') : [];
             // If all empty? Value mode
