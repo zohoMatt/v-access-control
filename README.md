@@ -11,7 +11,7 @@ or
 
 ## Documentation
 ### Basic examples
-#### Directive modifiers (shorthand)
+#### Directive binding modifiers (shorthand)
 ``` html
 <my-component v-access.AUTH1.AUTH2 {...otherProps}></my-component>
 <div class="any-dom" v-access.AUTH1.AUTH2>
@@ -19,7 +19,7 @@ or
 </div>
 ```
 By this annotation, this element will only display if user acquire AUTH1 **and** AUTH2.
-#### Directive bindings (shorthand)
+#### Directive binding args (shorthand)
 ``` html
 <my-component v-access:AUTH1|AUTH2 {...otherProps}></my-component>
 <div class="any-dom" v-access:AUTH1|AUTH2>
@@ -50,9 +50,13 @@ data() {
 Consequently, user who acquire AUTH1 and AUTH2 and **any one of** `AUTH3, AUTH4` will be allowed to observe this element.
 
 ### APIs
-#### `options` in `Vue.use(VAccessControl, options)`
+#### `options` in `Vue.use(VAccessControlPlugin, options)`
+##### Type
 ```javascript
 {
-    userAuthFactory: void => string[]
+    // Use a factory function to return an array. By this method, userAuth is guaranteed to be up-to-date while v-access lifecycle hooks are called.
+    userAuthFactory: void => string[],
+    router?: VueRouterObject
 }
 ```
+##### Example
