@@ -1,11 +1,13 @@
 {
   "name": "v-access-control",
-  "version": "0.1.4",
+  "version": "0.1.7",
   "description": "Use v-access, a custom directive, to implement front-end access control in Vue.js.",
-  "main": "dist/index.js",
+  "main": "dist/index.bundle.js",
   "scripts": {
+    "start": "webpack --config webpack.config.js",
     "topublish": "npm run build && npm publish",
-    "build": "webpack .",
+    "build": "webpack --config webpack.config.js",
+    "build:debug": "webpack --display-error-details --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,7 +28,9 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.7.0"
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^0.1.19"
   },
   "dependencies": {}
 }
