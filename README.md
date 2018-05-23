@@ -54,7 +54,7 @@ Consequently, user who acquire AUTH1 and AUTH2 and **any one of** `AUTH3, AUTH4`
 ##### Type
 ```javascript
 {
-    // Use a factory function to return an array. By this method, userAuth is guaranteed to be up-to-date while v-access lifecycle hooks are called.
+    // Use a factory function to return an array. In this way, userAuth is guaranteed to be up-to-date every time v-access lifecycle hooks are called.
     userAuthFactory: void => string[],
     router?: VueRouterObject
 }

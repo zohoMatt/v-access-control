@@ -2,9 +2,9 @@ export default {
     /**
      * @method install
      * @param {*} Vue 
-     * @param {*} options  flow style: { userAuthFactory: void => string[] }
+     * @param {*} options  flow style: { userAuthFactory: void => string[], router: VueRouterObject, routeGuard: (to, from, next) => void }
      */
-    install(Vue, options) {
+    install(Vue, options={ userAuthFactory: () => [], router: undefined, routeGuard: () => null }) {
         /**
          * @function checkAccess
          * @description
@@ -47,10 +47,34 @@ export default {
 
         };
 
-        // Register
+        // Register directive
         Vue.directive('access', {
             bind: updateElement,
             update: updateElement
+        });
+
+        const { router, routeGuard } = options;
+        if (router === undefined) return;
+        // Register route guard
+        router.beforeEach(async (to, from, next) => {
+            /******************** Access control *******************/
+            const allRequiredAuth = to.meta.access || [];
+            const anyRequiredAuth = to.meta.anyAccess || [];
+            let userAuth = userAuthFactory();
+            const makeDecision = (myAuth) => {
+                if (checkAccess({
+                        achieved:    myAuth,
+                        required:    allRequiredAuth,
+                        anyRequired: anyRequiredAuth
+                    })) {
+                    next();
+                } else {
+                    next('/no-permission');
+                }
+            };
+            makeDecision(userAuth);
+
+            routeGuard();
         });
     }
 };
